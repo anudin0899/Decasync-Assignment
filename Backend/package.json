@@ -1,0 +1,19 @@
+{
+  "name": "decasync-assignment",
+  "version": "1.0.0",
+  "description": "decasync-assignment backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.7",
+    "shortid": "^2.2.16"
+  }
+}
