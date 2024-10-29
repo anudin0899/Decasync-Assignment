@@ -24,8 +24,8 @@ const itemSchema = new schema({
         required: true
     },
     supplier: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Supplier',
+        type: schema.Types.ObjectId,
+        ref: 'SUPPLIER',
         required: true
     },
     stockUnit: {

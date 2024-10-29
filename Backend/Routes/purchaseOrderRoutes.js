@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const PurchaseOrder = require('../Models/purchaseOrderModel');
+const PURCHASEORDER = require('../Models/purchaseOrderModel');
+const { v4: uuidv4 } = require('uuid');
 const excel = require('exceljs');
 
 // Get all purchase orders
 router.get('/get_orders', async (req, res) => {
     try {
-        const orders = await PurchaseOrder.find()
+        const orders = await PURCHASEORDER.find()
             .populate('supplier')
             .populate('items.item');
         res.json(orders);
@@ -17,8 +18,12 @@ router.get('/get_orders', async (req, res) => {
 
 // Create new purchase order
 router.post('/add_orders', async (req, res) => {
-    const order = new PurchaseOrder(req.body);
+
     try {
+        const orderId = uuidv4();
+        const order = new PURCHASEORDER({ ...req.body, orderNo: orderId });
+        console.log(order);
+
         const newOrder = await order.save();
         res.status(201).json(newOrder);
     } catch (error) {

@@ -19,10 +19,11 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import Instance from '@/app/Instance/axiosInstance'
+import Instance from '@/Instance/axiosInstance'
 
 
-const AddSuppliers = ({ openDialog, setOpenDialog }) => {
+
+const AddSuppliers = ({ refreshData, openDialog, setOpenDialog }) => {
 
 
     const [formData, setFormData] = useState({
@@ -62,7 +63,7 @@ const AddSuppliers = ({ openDialog, setOpenDialog }) => {
                     status: 'Active'
                 });
 
-                fetchSuppliers();
+                refreshData();
                 setError('');
             }
         } catch (error) {
@@ -75,7 +76,7 @@ const AddSuppliers = ({ openDialog, setOpenDialog }) => {
 
     return (
         <div>
-            <Dialog open={openDialog} asChild={true}>
+            <Dialog open={openDialog} >
                 <DialogContent className='bg-white flex flex-col items-center'>
                     <DialogHeader className='w-full px-10'>
                         <DialogTitle className='text-3xl font-bold my-5'>Add Suppliers</DialogTitle>

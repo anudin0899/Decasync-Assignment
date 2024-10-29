@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
-const purchaseOrderItemSchema = new mongoose.Schema({
+const purchaseOrderItemSchema = new schema({
     item: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: schema.Types.ObjectId,
         ref: 'ITEM',
         required: true
     },
@@ -44,7 +44,7 @@ const purchaseOrderSchema = new schema({
         default: Date.now
     },
     supplier: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: schema.Types.ObjectId,
         ref: 'SUPPLIER',
         required: true
     },

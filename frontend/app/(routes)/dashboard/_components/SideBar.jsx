@@ -9,9 +9,9 @@ const Sidebar = () => {
 
     const menuList = [
         { id: 1, name: 'Dashboard', icon: <LayoutGrid />, path: '/' },
-        { id: 2, name: 'Order', icon: <ListOrdered />, path: '/dashboard/orders' },
-        { id: 3, name: 'Supplier', icon: <Car />, path: '/dashboard/supplier' },
-        { id: 4, name: 'Purchase', icon: <ShieldCheck />, path: '/dashboard/purchase' },
+        { id: 2, name: 'Supplier', icon: <Car />, path: '/dashboard/supplier' },
+        { id: 3, name: 'Purchase', icon: <ShieldCheck />, path: '/dashboard/purchase' },
+        { id: 4, name: 'Order', icon: <ListOrdered />, path: '/dashboard/orders' },
     ];
 
     const path = useParams();
